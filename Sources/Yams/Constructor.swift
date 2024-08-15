@@ -270,6 +270,7 @@ extension ScalarConstructible where Self: FloatingPoint & SexagesimalConvertible
 }
 
 private extension FixedWidthInteger where Self: SexagesimalConvertible {
+    // swiftlint:disable identifier_name
     static func _construct(from scalar: Node.Scalar) -> Self? {
         guard scalar.style == .any || scalar.style == .plain else {
             return nil
@@ -419,6 +420,7 @@ extension Dictionary {
 }
 
 private extension Dictionary {
+    // swiftlint:disable identifier_name
     static func _construct_mapping(from mapping: Node.Mapping) -> [AnyHashable: Any] {
         let mapping = mapping.flatten()
         // TODO: YAML supports keys other than str.
